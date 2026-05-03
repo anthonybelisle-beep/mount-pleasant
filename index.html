@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mount Pleasant — An Integrated Industrial Campus in Cayo District, Belize</title>
+<meta name="description" content="A 5-acre industrial development in Mount Pleasant, Cayo District, Belize — bringing manufacturing, materials supply, contractor services, storage, and logistics together on one freehold site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ RESET ============ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* ============ TOKENS ============ */
+  :root {
+    --navy: #15263F;
+    --navy-deep: #0E1B2E;
+    --navy-soft: #2A3D5C;
+    --gold: #C49A44;
+    --gold-soft: #D4B164;
+    --cream: #F7F4EE;
+    --cream-deep: #EFEAE0;
+    --charcoal: #1F1F1F;
+    --gray: #5A5A5A;
+    --gray-soft: #8A8A8A;
+    --rule: #D9D2C4;
+    --rule-soft: #E5DFD2;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* ============ TYPOGRAPHY ============ */
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-block;
+  }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; letter-spacing: -0.015em; }
+  h1 { font-size: clamp(2.2rem, 5.2vw, 4.6rem); }
+  h2 { font-size: clamp(1.85rem, 3.6vw, 3.1rem); }
+  h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
+
+  p { line-height: 1.65; }
+
+  /* ============ LAYOUT ============ */
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .container-narrow { max-width: 920px; margin: 0 auto; padding: 0 40px; }
+
+  section { padding: 130px 0; position: relative; }
+  .section-kicker { margin-bottom: 18px; }
+  .section-title { margin-bottom: 36px; max-width: 920px; }
+  .section-lead { font-size: 1.15rem; line-height: 1.7; color: var(--charcoal); max-width: 760px; margin-bottom: 64px; }
+
+  /* ============ HEADER ============ */
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(14, 27, 46, 0.88);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    z-index: 100;
+    transition: background 0.3s ease;
+    border-bottom: 1px solid rgba(247, 244, 238, 0.06);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px;
+    max-width: 1480px; margin: 0 auto;
+  }
+  .logo {
+    font-family: var(--serif); font-weight: 600; font-size: 19px;
+    color: var(--cream); letter-spacing: 0.005em;
+    text-decoration: none; display: flex; align-items: baseline; gap: 1px;
+  }
+  .logo-mark { color: var(--gold); font-size: 22px; line-height: 0; }
+  nav ul {
+    display: flex; gap: 36px; list-style: none;
+  }
+  nav a {
+    color: rgba(247, 244, 238, 0.72);
+    text-decoration: none;
+    font-size: 12.5px; font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .header-cta { display: flex; gap: 28px; align-items: center; }
+  .construction-link {
+    color: rgba(247, 244, 238, 0.55);
+    text-decoration: none;
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .construction-link:hover { color: var(--gold); }
+  .construction-link::after { content: '↗'; font-size: 13px; opacity: 0.7; }
+
+  .cta-button {
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 11px 24px;
+    font-size: 12.5px; font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .cta-button:hover { background: var(--gold-soft); }
+
+  .menu-btn { display: none; background: none; border: none; color: var(--cream); font-size: 20px; cursor: pointer; }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-deep);
+    position: relative;
+    color: var(--cream);
+    display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('./images/north-east-developed.jpg');
+    background-size: cover;
+    background-position: center 60%;
+    transform: scale(1.05);
+    transition: transform 8s ease;
+  }
+  .hero.loaded .hero-bg { transform: scale(1); }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(14,27,46,0.35) 0%, rgba(14,27,46,0.6) 50%, rgba(14,27,46,0.92) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    width: 100%;
+    padding: 140px 0 80px;
+  }
+  .hero h1 {
+    color: var(--cream);
+    max-width: 960px;
+    margin: 28px 0 36px;
+    line-height: 1.05;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+    max-width: 700px;
+    color: rgba(247, 244, 238, 0.85);
+    margin-bottom: 64px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(247, 244, 238, 0.18);
+    padding-top: 32px;
+    margin-bottom: 44px;
+  }
+  .metric { padding-right: 28px; }
+  .metric-value {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 10px;
+    font-feature-settings: 'tnum';
+    font-weight: 400;
+  }
+  .metric-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(247, 244, 238, 0.6);
+  }
+  .hero-ctas { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .text-link {
+    color: rgba(247, 244, 238, 0.85);
+    text-decoration: none;
+    font-size: 12.5px;
+    border-bottom: 1px solid rgba(247, 244, 238, 0.4);
+    padding-bottom: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .text-link:hover { border-bottom-color: var(--gold); color: var(--gold); }
+
+  /* ============ THE PROPERTY ============ */
+  .property { background: var(--cream); }
+
+  .property-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover; background-position: center;
+    margin: 64px 0 80px;
+    background-image: url('./images/south-existing.jpg');
+  }
+
+  .property-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 100px;
+    align-items: start;
+    margin-bottom: 80px;
+  }
+
+  .specs-table {
+    width: 100%;
+    border-top: 1px solid var(--rule);
+    border-collapse: collapse;
+  }
+  .specs-table tr { border-bottom: 1px solid var(--rule); }
+  .specs-table td { padding: 22px 0; font-size: 14.5px; vertical-align: top; line-height: 1.5; }
+  .specs-table td:first-child {
+    width: 38%;
+    color: var(--gray-soft);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11.5px;
+    padding-top: 25px;
+  }
+  .specs-table td:last-child {
+    color: var(--charcoal);
+    font-weight: 400;
+  }
+
+  .interior-block {
+    margin-top: 100px;
+    border-top: 1px solid var(--rule);
+    padding-top: 80px;
+  }
+  .interior-heading {
+    margin-bottom: 48px;
+    display: flex; align-items: baseline; gap: 24px;
+  }
+  .interior-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .interior-grid img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+  }
+  .interior-caption {
+    max-width: 720px;
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.7;
+    font-style: italic;
+    font-family: var(--serif);
+    font-weight: 400;
+  }
+
+  .property-closing {
+    text-align: center;
+    margin-top: 100px;
+    padding: 60px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .property-closing p {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.4;
+    color: var(--navy);
+    max-width: 760px;
+    margin: 0 auto;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* ============ THE VISION ============ */
+  .vision { background: var(--navy-deep); color: var(--cream); }
+  .vision h2 { color: var(--cream); }
+  .vision .section-lead { color: rgba(247, 244, 238, 0.78); }
+
+  /* Before/After slider */
+  .ba-wrap { margin: 60px 0 32px; }
+  .ba-labels {
+    display: flex; justify-content: space-between;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em;
+    color: rgba(247, 244, 238, 0.5);
+    margin-bottom: 14px;
+    padding: 0 4px;
+  }
+  .ba-labels span:nth-child(2) { color: var(--gold); }
+  .ba-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    cursor: ew-resize;
+    user-select: none;
+    background: var(--navy);
+  }
+  .ba-after, .ba-before {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+  }
+  .ba-after { background-image: url('./images/south-developed.jpg'); }
+  .ba-before {
+    background-image: url('./images/south-existing.jpg');
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    transition: clip-path 0.05s ease;
+  }
+  .ba-handle {
+    position: absolute; top: 0; bottom: 0;
+    left: 50%; transform: translateX(-50%);
+    width: 2px;
+    background: var(--cream);
+    pointer-events: none;
+    transition: left 0.05s ease;
+  }
+  .ba-handle::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px; height: 52px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(196,154,68,0.25), 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .ba-handle::after {
+    content: '⇄';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--navy-deep);
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .ba-caption {
+    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(247, 244, 238, 0.6);
+    text-align: center;
+    font-style: italic;
+    font-family: var(--serif);
+  }
+
+  .vision-image {
+    width: 100%;
+    aspect-ratio: 21/9;
+    background-size: cover; background-position: center;
+    background-image: url('./images/north-developed.jpg');
+    margin-top: 100px;
+  }
+
+  /* ============ FEATURES ============ */
+  .features { background: var(--cream); }
+  .features-intro { display: flex; justify-content: space-between; align-items: end; margin-bottom: 70px; gap: 60px; flex-wrap: wrap; }
+  .features-intro .section-title { margin-bottom: 0; max-width: 540px; }
+  .features-intro p {
+    max-width: 460px;
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .feature-card {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 56px 44px;
+    background: white;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .feature-card:hover { background: var(--cream-deep); }
+  .feature-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .feature-title {
+    font-family: var(--serif);
+    font-size: 21px;
+    margin-bottom: 16px;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .feature-text {
+    font-size: 14.5px;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+  .feature-tag {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* ============ SPOTLIGHT ============ */
+  .spotlight {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .spotlight h2 { color: var(--cream); }
+  .spotlight .section-lead { color: rgba(247,244,238,0.78); }
+  .spotlight-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin: 64px 0 0;
+  }
+  .spotlight-images img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+  .spotlight-caption {
+    margin-top: 32px;
+    font-size: 13px;
+    color: rgba(247, 244, 238, 0.55);
+    letter-spacing: 0.04em;
+    font-style: italic;
+  }
+
+  /* ============ LOCATION ============ */
+  .location { background: var(--cream); }
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 90px;
+    align-items: stretch;
+  }
+  .location-copy { display: flex; flex-direction: column; }
+  .location-copy p {
+    color: var(--charcoal);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+  .location-stats {
+    margin-top: auto;
+    border-top: 1px solid var(--rule);
+    padding-top: 0;
+  }
+  .location-stat {
+    display: flex; justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+    align-items: baseline;
+  }
+  .location-stat-label {
+    color: var(--gray-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 11.5px;
+    font-weight: 500;
+  }
+  .location-stat-value {
+    font-weight: 500;
+    color: var(--navy);
+    font-family: var(--serif);
+    font-size: 17px;
+  }
+
+  .map-block {
+    background: var(--navy-deep);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: var(--cream);
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+  }
+  .map-block::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(45deg, transparent 49.5%, rgba(196,154,68,0.06) 49.5%, rgba(196,154,68,0.06) 50.5%, transparent 50.5%),
+      linear-gradient(-45deg, transparent 49.5%, rgba(196,154,68,0.06) 49.5%, rgba(196,154,68,0.06) 50.5%, transparent 50.5%);
+    background-size: 26px 26px;
+  }
+  .map-block::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(14,27,46,0.6) 70%);
+  }
+  .map-pin-wrap { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+  .map-pin {
+    width: 22px; height: 22px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(196,154,68,0.25), 0 0 0 14px rgba(196,154,68,0.12);
+    margin-bottom: 32px;
+    position: relative;
+    animation: pinPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pinPulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(196,154,68,0.25), 0 0 0 14px rgba(196,154,68,0.12); }
+    50% { box-shadow: 0 0 0 10px rgba(196,154,68,0.18), 0 0 0 22px rgba(196,154,68,0.06); }
+  }
+  .map-place {
+    font-family: var(--serif);
+    font-size: 32px;
+    text-align: center;
+    color: var(--cream);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .map-region {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .map-coords {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: rgba(247, 244, 238, 0.55);
+    font-style: italic;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  /* ============ INQUIRY ============ */
+  .inquiry { background: var(--cream-deep); }
+  .inquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .inquiry-copy h2 { color: var(--navy); margin-bottom: 28px; }
+  .inquiry-copy p {
+    color: var(--charcoal);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+  .inquiry-return-card {
+    margin-top: 40px;
+    padding: 32px;
+    background: white;
+    border-left: 3px solid var(--gold);
+  }
+  .inquiry-return-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .inquiry-return-value {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 14px;
+    font-feature-settings: 'tnum';
+  }
+  .inquiry-return-note {
+    font-size: 13.5px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  .inquiry-form {
+    display: flex; flex-direction: column; gap: 22px;
+    background: white;
+    padding: 48px;
+    border: 1px solid var(--rule);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-soft);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--sans);
+    font-size: 14.5px;
+    background: white;
+    border: 1px solid var(--rule);
+    color: var(--charcoal);
+    transition: border-color 0.2s;
+    border-radius: 0;
+  }
+  .form-field select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%235A5A5A' fill='none' stroke-width='1.5'/></svg>"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  .form-field input:focus,
+  .form-field textarea:focus,
+  .form-field select:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .form-field textarea { min-height: 120px; resize: vertical; font-family: var(--sans); }
+
+  .submit-btn {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 17px 36px;
+    border: none;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+  .submit-btn:hover { background: var(--navy-soft); }
+
+  .form-success {
+    display: none;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 48px;
+    text-align: center;
+    border: 1px solid var(--rule);
+  }
+  .form-success.active { display: block; }
+  .form-success h3 { color: var(--cream); margin-bottom: 14px; }
+  .form-success p { color: rgba(247, 244, 238, 0.75); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 90px 0 36px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 70px;
+    margin-bottom: 70px;
+  }
+  .footer-col h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    margin-bottom: 28px;
+    font-family: var(--sans);
+    font-weight: 600;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li {
+    margin-bottom: 13px;
+    font-size: 13.5px;
+    color: rgba(247, 244, 238, 0.7);
+  }
+  .footer-col a {
+    color: rgba(247, 244, 238, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold); }
+
+  .brand-family-item {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+  }
+  .brand-family-item:last-child { border-bottom: none; }
+  .brand-family-name {
+    color: var(--cream);
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .brand-family-status {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .brand-family-link {
+    color: rgba(247, 244, 238, 0.55);
+    font-size: 12px;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  .brand-family-link::after { content: ' →'; }
+  .brand-family-link:hover { color: var(--gold); }
+
+  .footer-bottom {
+    padding-top: 36px;
+    border-top: 1px solid rgba(247, 244, 238, 0.1);
+    font-size: 12px;
+    color: rgba(247, 244, 238, 0.45);
+    line-height: 1.7;
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1024px) {
+    .property-grid, .location-grid, .inquiry-grid, .features-intro {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+    .features-intro p { max-width: 100%; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 720px) {
+    nav { display: none; }
+    .construction-link { display: none; }
+    .menu-btn { display: block; }
+    .header-inner { padding: 14px 24px; }
+    .container, .container-narrow { padding: 0 24px; }
+    section { padding: 80px 0; }
+    .hero-content { padding: 120px 0 60px; }
+    .hero-metrics { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
+    .metric:nth-child(1), .metric:nth-child(2) { padding-bottom: 24px; border-bottom: 1px solid rgba(247, 244, 238, 0.1); }
+    .interior-grid, .spotlight-images, .form-row {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .features-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+    .ba-handle::before { width: 44px; height: 44px; }
+    .inquiry-form { padding: 32px 24px; }
+    .map-block { min-height: 380px; padding: 40px; }
+    .map-place { font-size: 26px; }
+    .property-image, .vision-image { aspect-ratio: 4/3; }
+    .ba-container { aspect-ratio: 4/3; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo">Mount Pleasant<span class="logo-mark">.</span></a>
+    <nav>
+      <ul>
+        <li><a href="#property">The Property</a></li>
+        <li><a href="#vision">The Vision</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#inquiry">Inquiries</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="#" class="construction-link">Construction Co.</a>
+      <a href="#inquiry" class="cta-button">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <span class="eyebrow">Mount Pleasant · Cayo District · Belize</span>
+      <h1>An Integrated Industrial Campus Taking Shape in Cayo District</h1>
+      <p class="hero-sub">A 5-acre development bringing manufacturing, materials supply, contractor services, storage, and industrial logistics together on one freehold site in western Belize.</p>
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-value">5 Acres</div>
+          <div class="metric-label">Freehold Industrial</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">15,580 ft²</div>
+          <div class="metric-label">Existing Improvements</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">6</div>
+          <div class="metric-label">Project Components</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">Cayo</div>
+          <div class="metric-label">Western Belize</div>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#vision" class="cta-button">Explore the Vision</a>
+        <a href="#inquiry" class="text-link">Investor Inquiries</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PROPERTY ============ -->
+<section class="property" id="property">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow section-kicker">Section 01 — The Foundation</span>
+      <h2 class="section-title">The Property Today</h2>
+      <p class="section-lead">The Mount Pleasant industrial site is an existing, operational property — five acres of freehold industrial land with established road access, secure yard area, and approximately 15,580 square feet of warehouse and office improvements already standing. The project does not begin from raw land. It begins from a working foundation.</p>
+    </div>
+
+    <div class="property-image reveal"></div>
+
+    <div class="property-grid">
+      <div class="reveal">
+        <h3 style="margin-bottom: 32px; color: var(--navy);">Property Specifications</h3>
+        <table class="specs-table">
+          <tr><td>Site Area</td><td>Approximately 5 acres</td></tr>
+          <tr><td>Title</td><td>Freehold</td></tr>
+          <tr><td>Existing Improvements</td><td>Approximately 15,580 sq. ft. — warehouse + office</td></tr>
+          <tr><td>Yard</td><td>Secure area for materials, fabrication staging, laydown</td></tr>
+          <tr><td>Zoning</td><td>Industrial — confirmed operational suitability</td></tr>
+          <tr><td>Access</td><td>Established road access</td></tr>
+          <tr><td>Infrastructure</td><td>On-site utilities and site services</td></tr>
+          <tr><td>Expansion</td><td>Additional land available for future buildings</td></tr>
+        </table>
+      </div>
+      <div class="reveal" style="padding-top: 60px;">
+        <p style="font-family: var(--serif); font-size: 1.4rem; line-height: 1.5; color: var(--navy); font-weight: 400; margin-bottom: 24px;">"The site is freehold. The improvements are standing. The infrastructure is in place. Everything that comes next is built on a foundation that already exists."</p>
+        <p style="font-size: 14px; color: var(--gray-soft); text-transform: uppercase; letter-spacing: 0.14em;">— Project Brief</p>
+      </div>
+    </div>
+
+    <div class="interior-block reveal">
+      <div class="interior-heading">
+        <span class="eyebrow">Inside</span>
+        <h3 style="color: var(--navy);">The Existing Structure</h3>
+      </div>
+      <div class="interior-grid">
+        <img src="./images/interior-existing-1.jpg" alt="Interior — structural steel frame and staircase" loading="lazy">
+        <img src="./images/interior-existing-2.jpg" alt="Interior — open floor plate and window walls" loading="lazy">
+      </div>
+      <p class="interior-caption">The existing building is engineered around a structural steel frame with full-height window walls, exposed beam ceilings, and an open floor plate — bones built for adaptability. The structure is move-in ready for tenant fit-out, and serves as the architectural starting point for the broader campus that takes shape around it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE VISION ============ -->
+<section class="vision" id="vision">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow section-kicker">Section 02 — A Five-Year Build-Out</span>
+      <h2 class="section-title">The Vision</h2>
+      <p class="section-lead">The site is engineered to evolve from a productive industrial property into a fully integrated multi-use campus — manufacturing, materials supply, contractor services, storage, logistics, and accommodation, all on one freehold parcel, all under a single ownership structure.</p>
+    </div>
+
+    <div class="ba-wrap reveal">
+      <div class="ba-labels">
+        <span>Today</span>
+        <span>The Vision</span>
+      </div>
+      <div class="ba-container" id="baContainer">
+        <div class="ba-after"></div>
+        <div class="ba-before" id="baBefore"></div>
+        <div class="ba-handle" id="baHandle"></div>
+      </div>
+      <p class="ba-caption">Same vantage. Same five acres. Drag to reveal the transformation.</p>
+    </div>
+
+    <div class="vision-image reveal"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-intro reveal">
+      <div>
+        <span class="eyebrow section-kicker">Section 03 — Project Features</span>
+        <h2 class="section-title">Six Components. One Campus.</h2>
+      </div>
+      <p>The Mount Pleasant campus is structured as a multi-use operating asset — not a single-purpose facility. Each component draws from a different segment of the local industrial economy.</p>
+    </div>
+
+    <div class="features-grid reveal">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3 class="feature-title">Manufacturing & Steel Fabrication</h3>
+        <p class="feature-text">The campus's anchor production facility — a centralized manufacturing operation producing steel-frame and modular building systems for the regional construction market.</p>
+        <span class="feature-tag">Anchor Tenant — Operating Brand: Supermod</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3 class="feature-title">Materials Showroom & Contractor Supply</h3>
+        <p class="feature-text">A regional building-materials destination — finished goods, fixtures, and building supply under one roof. The contractor's first stop in western Belize.</p>
+        <span class="feature-tag">Spotlight Below ↓</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3 class="feature-title">Commercial Rental Bays</h3>
+        <p class="feature-text">Purpose-built leasable bays for contractors, trades, equipment-rental operators, and adjacent industrial businesses serving the local construction economy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <h3 class="feature-title">Mini-Storage & Yard Storage</h3>
+        <p class="feature-text">Indoor mini-storage units alongside secure outdoor yard storage — answering a chronic shortage of organized storage capacity in the western corridor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <h3 class="feature-title">Fleet & Logistics Staging</h3>
+        <p class="feature-text">Hardstand and laydown areas designed for fleet operators, equipment storage, and civil-works staging — flexible capacity for the region's logistics tenants.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <h3 class="feature-title">Worker & Staff Accommodations</h3>
+        <p class="feature-text">On-site purpose-built housing serving the campus's own labor force as well as employees of surrounding industrial operators in Cayo District.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPOTLIGHT ============ -->
+<section class="spotlight" id="spotlight">
+  <div class="container">
+    <div class="reveal" style="max-width: 760px;">
+      <span class="eyebrow section-kicker">Spotlight — Component 02</span>
+      <h2 class="section-title">A Materials Destination for Western Belize</h2>
+      <p class="section-lead">The campus's building-materials center is designed as the regional anchor for finished goods, fixtures, and building supply — a space the local construction industry currently lacks at this scale. Slab and tile selection, bathroom fixtures, hardware, and finishes — under one roof, on the same site as the manufacturing operation, with road access and contractor parking.</p>
+    </div>
+    <div class="spotlight-images reveal">
+      <img src="./images/interior-render-1.jpg" alt="Showroom rendering — slab and tile materials display" loading="lazy">
+      <img src="./images/interior-render-2.jpg" alt="Showroom rendering — bathroom fixtures display" loading="lazy">
+    </div>
+    <p class="spotlight-caption">Renderings — Materials Showroom and Bathroom Fixtures Center, Mount Pleasant Campus.</p>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="location" id="location">
+  <div class="container">
+    <div class="reveal" style="margin-bottom: 70px;">
+      <span class="eyebrow section-kicker">Section 04 — Location</span>
+      <h2 class="section-title">Mount Pleasant. Cayo District.</h2>
+    </div>
+    <div class="location-grid">
+      <div class="location-copy reveal">
+        <p>Cayo District is western Belize's industrial hub — positioned along the country's primary east-west commercial corridor and serving as the natural staging point for construction, materials distribution, agriculture, and logistics across the central and western regions.</p>
+        <p>The Mount Pleasant site sits on the George Price Highway corridor, with established road access and proximity to both Belmopan, the country's capital, and the western border crossing into Guatemala. Industrial demand in this corridor is durable and underserved.</p>
+        <div class="location-stats">
+          <div class="location-stat">
+            <span class="location-stat-label">District</span>
+            <span class="location-stat-value">Cayo, Western Belize</span>
+          </div>
+          <div class="location-stat">
+            <span class="location-stat-label">Highway Access</span>
+            <span class="location-stat-value">George Price Highway</span>
+          </div>
+          <div class="location-stat">
+            <span class="location-stat-label">To Belmopan</span>
+            <span class="location-stat-value">~30 km East</span>
+          </div>
+          <div class="location-stat">
+            <span class="location-stat-label">To Belize City</span>
+            <span class="location-stat-value">~115 km East</span>
+          </div>
+          <div class="location-stat">
+            <span class="location-stat-label">To Western Border</span>
+            <span class="location-stat-value">~20 km West</span>
+          </div>
+          <div class="location-stat">
+            <span class="location-stat-label">Zoning</span>
+            <span class="location-stat-value">Industrial</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-block reveal">
+        <div class="map-pin-wrap">
+          <div class="map-pin"></div>
+          <div class="map-place">Mount Pleasant</div>
+          <div class="map-region">Cayo District · Belize</div>
+          <div class="map-coords">Western Industrial Corridor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INQUIRY ============ -->
+<section class="inquiry" id="inquiry">
+  <div class="container">
+    <div class="inquiry-grid">
+      <div class="inquiry-copy reveal">
+        <span class="eyebrow section-kicker">Section 05 — Get in Touch</span>
+        <h2>Investor & Tenant Enquiries</h2>
+        <p>The Mount Pleasant project is open to discussions with strategic investors, prospective tenants, and operating partners across the local construction, manufacturing, and industrial sectors.</p>
+        <p>Send a brief message and we will follow up directly with project materials and next steps.</p>
+        <div class="inquiry-return-card">
+          <div class="inquiry-return-label">Project Participation</div>
+          <div class="inquiry-return-value" style="font-size: 26px; line-height: 1.25;">Terms Available on Request</div>
+          <p class="inquiry-return-note">Project structure, financial details, and participation terms are shared with qualified parties following an initial confidential discussion.</p>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <form class="inquiry-form" id="inquiryForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="country">Country</label>
+              <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-field">
+              <label for="role">Role / Firm</label>
+              <input type="text" id="role" name="role">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="interest">Interest</label>
+            <select id="interest" name="interest" required>
+              <option value="">Select one…</option>
+              <option value="investor">Investor enquiry</option>
+              <option value="tenant">Tenant / lease enquiry</option>
+              <option value="construction">Construction or supply partnership</option>
+              <option value="general">General interest</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us briefly about your interest…"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Enquiry</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Thank you.</h3>
+          <p>Your enquiry has been received. We will be in touch within two business days with project materials and next steps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>The Family</h4>
+        <div class="brand-family-item">
+          <span class="brand-family-name">Mount Pleasant</span>
+          <span class="brand-family-status">This Site</span>
+        </div>
+        <div class="brand-family-item">
+          <span class="brand-family-name">Construction Company</span>
+          <span class="brand-family-status">Coming Soon</span>
+          <a href="#" class="brand-family-link">Visit Site</a>
+        </div>
+        <div class="brand-family-item">
+          <span class="brand-family-name">Manufacturing Brand</span>
+          <span class="brand-family-status">In Development</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#property">The Property</a></li>
+          <li><a href="#vision">The Vision</a></li>
+          <li><a href="#features">Project Features</a></li>
+          <li><a href="#spotlight">Materials Showroom</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#inquiry">Enquiries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Mount Pleasant</li>
+          <li>Cayo District, Belize</li>
+          <li style="margin-top: 16px;">enquiries@mountpleasantbz.com</li>
+          <li><a href="#inquiry">Send a message →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mount Pleasant · Cayo District, Belize</span>
+      <span>An integrated industrial development.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============ HERO LOAD-IN ============
+  window.addEventListener('load', () => {
+    document.querySelector('.hero').classList.add('loaded');
+  });
+
+  // ============ SCROLL REVEAL ============
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ============ BEFORE / AFTER SLIDER ============
+  const ba = document.getElementById('baContainer');
+  const baBefore = document.getElementById('baBefore');
+  const baHandle = document.getElementById('baHandle');
+  let isDragging = false;
+
+  function moveSlider(clientX) {
+    const rect = ba.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    baBefore.style.clipPath = `polygon(0 0, ${pct}% 0, ${pct}% 100%, 0 100%)`;
+    baHandle.style.left = `${pct}%`;
+  }
+
+  ba.addEventListener('mousedown', e => { isDragging = true; moveSlider(e.clientX); });
+  window.addEventListener('mousemove', e => { if (isDragging) moveSlider(e.clientX); });
+  window.addEventListener('mouseup', () => isDragging = false);
+
+  ba.addEventListener('touchstart', e => { isDragging = true; moveSlider(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchmove', e => { if (isDragging) moveSlider(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', () => isDragging = false);
+
+  // Auto-demo: subtle nudge animation on first scroll-into-view
+  const baObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        let p = 50;
+        const seq = [{p:50,d:0},{p:80,d:1200},{p:20,d:2400},{p:50,d:3600}];
+        seq.forEach(s => setTimeout(() => {
+          baBefore.style.transition = 'clip-path 1s ease';
+          baHandle.style.transition = 'left 1s ease';
+          baBefore.style.clipPath = `polygon(0 0, ${s.p}% 0, ${s.p}% 100%, 0 100%)`;
+          baHandle.style.left = `${s.p}%`;
+        }, s.d));
+        setTimeout(() => {
+          baBefore.style.transition = 'clip-path 0.05s ease';
+          baHandle.style.transition = 'left 0.05s ease';
+        }, 4800);
+        baObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  baObs.observe(ba);
+
+  // ============ INQUIRY FORM ============
+  const form = document.getElementById('inquiryForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    form.style.display = 'none';
+    success.classList.add('active');
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+
+</body>
+</html>
